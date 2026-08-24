@@ -15,7 +15,7 @@
 <title>Обучение английскому языку</title>
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Unbounded:wght@700;800;900&family=Golos+Text:wght@400;500;600;700;900&display=swap">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Dela+Gothic+One&family=Golos+Text:wght@400;500;600;700;900&display=swap">
 
 <style>
 /* ─────────────────────────────────────────────
@@ -32,7 +32,10 @@
   --muted:#5E5E5E;
   --rule:#E3E3E3;
 
-  --display:'Unbounded','Golos Text',system-ui,sans-serif;
+  /* Dela Gothic One существует ровно в одном начертании — 400.
+     Просить у неё 700/800/900 нельзя: браузер начнёт подделывать жирность
+     поверх и без того тяжёлой гарнитуры и замажет форму букв. */
+  --display:'Dela Gothic One','Golos Text',system-ui,sans-serif;
   --body:'Golos Text',system-ui,sans-serif;
 
   --gut:clamp(18px,3.4vw,56px);
@@ -86,12 +89,15 @@ img{max-width:100%;display:block}
 
 .hero-h{
   font-family:var(--display);
-  font-weight:800;
-  font-size:clamp(23px,3.55vw,44px);
+  font-weight:400;
+  /* В макете заголовок 42px в кадре 1200px и занимает почти всю ширину:
+     самая длинная строка — 29 знаков. Ширину колонки держим под неё,
+     иначе строка переносится и композиция рассыпается. */
+  font-size:clamp(23px,3.5vw,42px);
   line-height:1.16;
   letter-spacing:-.015em;
   margin:0;
-  max-width:min(100%,980px);
+  max-width:min(100%,1060px);
   text-transform:uppercase;
 }
 
@@ -128,7 +134,7 @@ img{max-width:100%;display:block}
 .tak{
   position:absolute;
   font-family:var(--display);
-  font-weight:900;
+  font-weight:400;
   color:var(--red);
   letter-spacing:-.02em;
   transform:rotate(-8deg);
@@ -279,7 +285,7 @@ img{max-width:100%;display:block}
   grid-column:2;
   grid-row:1 / span 2;
   font-family:var(--display);
-  font-weight:800;
+  font-weight:400;
   font-size:clamp(21px,3.32vw,41px);
   line-height:1.14;
   letter-spacing:-.015em;
