@@ -15,7 +15,7 @@
 <title>Обучение английскому языку</title>
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Dela+Gothic+One&family=Golos+Text:wght@400;500;600;700;900&display=swap">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Unbounded:wght@700;800;900&family=Golos+Text:wght@400;500;600;700;900&display=swap">
 
 <style>
 /* ─────────────────────────────────────────────
@@ -32,10 +32,7 @@
   --muted:#5E5E5E;
   --rule:#E3E3E3;
 
-  /* Dela Gothic One существует ровно в одном начертании — 400.
-     Просить у неё 700/800/900 нельзя: браузер начнёт подделывать жирность
-     поверх и без того тяжёлой гарнитуры и замажет форму букв. */
-  --display:'Dela Gothic One','Golos Text',system-ui,sans-serif;
+  --display:'Unbounded','Golos Text',system-ui,sans-serif;
   --body:'Golos Text',system-ui,sans-serif;
 
   --gut:clamp(18px,3.4vw,56px);
@@ -89,7 +86,7 @@ img{max-width:100%;display:block}
 
 .hero-h{
   font-family:var(--display);
-  font-weight:400;
+  font-weight:800;
   /* В макете заголовок 42px в кадре 1200px и занимает почти всю ширину:
      самая длинная строка — 29 знаков. Ширину колонки держим под неё,
      иначе строка переносится и композиция рассыпается. */
@@ -134,7 +131,7 @@ img{max-width:100%;display:block}
 .tak{
   position:absolute;
   font-family:var(--display);
-  font-weight:400;
+  font-weight:900;
   color:var(--red);
   letter-spacing:-.02em;
   transform:rotate(-8deg);
@@ -283,9 +280,9 @@ img{max-width:100%;display:block}
 
 .turn-h{
   grid-column:2;
-  grid-row:1 / span 2;
+  grid-row:2;
   font-family:var(--display);
-  font-weight:400;
+  font-weight:800;
   font-size:clamp(21px,3.32vw,41px);
   line-height:1.14;
   letter-spacing:-.015em;
@@ -301,13 +298,16 @@ img{max-width:100%;display:block}
 .turn.is-in .line:nth-child(5) > i{transition-delay:.24s}
 .turn.is-in .line:nth-child(6) > i{transition-delay:.30s}
 .turn.is-in .line:nth-child(7) > i{transition-delay:.36s}
+.turn.is-in .line:nth-child(8) > i{transition-delay:.42s}
+.turn.is-in .line:nth-child(9) > i{transition-delay:.48s}
 
 .bag{
   position:absolute;
-  right:clamp(0px,1.2vw,16px);
-  top:clamp(150px,22vw,290px);
-  /* В макете пакет 295px из 1200 — почти четверть кадра */
-  width:clamp(150px,24.5vw,296px);
+  /* Замеры макета: пакет x 888..1196, y 2102..2438 в кадре 1200.
+     Правым краем он выходит за колонку текста почти до края кадра. */
+  right:clamp(-30px,-2.4vw,-6px);
+  top:clamp(140px,22.5vw,272px);
+  width:clamp(160px,26vw,306px);
   /* Плёнка просвечивает: сквозь неё видно заголовок, как в макете */
   mix-blend-mode:multiply;
   z-index:1;
@@ -319,8 +319,8 @@ img{max-width:100%;display:block}
 
 .aside{
   position:absolute;
-  right:clamp(112px,16.5vw,232px);
-  top:clamp(206px,25.5vw,336px);
+  right:clamp(112px,17.5vw,216px);
+  top:clamp(206px,26vw,340px);
   width:clamp(104px,12.5vw,164px);
   margin:0;
   z-index:3;
@@ -517,7 +517,9 @@ h1,h2,p,ul,figure{margin:0;padding:0}
       <span class="line"><i>дарят уверенность в себе</i></span>
       <span class="line"><i>и ты начинаешь говорить</i></span>
       <span class="line"><i>и кайфовать от себя</i></span>
-      <span class="line"><i>и английского</i></span>
+      <span class="line"><i>и английского.</i></span>
+      <span class="line"><i>Только реальная</i></span>
+      <span class="line"><i>польза и практика</i></span>
     </h2>
 
     <figure class="shot">
